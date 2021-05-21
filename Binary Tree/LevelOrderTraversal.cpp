@@ -23,11 +23,13 @@ Output:10 20 30 40 60 N N
 /* A binary tree Node
 
 // { Driver Code Starts
-#include <bits/stdc++.h>
-using namespace std;
+
 
 /* A binary tree node has data, pointer to left child
    and a pointer to right child */
+   
+#include <bits/stdc++.h>
+using namespace std;
 struct Node
 {
     int data;

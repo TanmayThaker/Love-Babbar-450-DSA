@@ -62,8 +62,9 @@ Constraints:
 */
 
 
-/* Node structure  used in the program
-
+/* Node structure  used in the program*/
+#include<bits/stdc++.h>
+using namespace std;
 struct Node{
 	int data;
 	struct Node * next;
@@ -76,7 +77,7 @@ struct Node{
 	}
 	
 };
-*/
+
 
 /*  Function which returns the  root of 
     the flattened linked list. */

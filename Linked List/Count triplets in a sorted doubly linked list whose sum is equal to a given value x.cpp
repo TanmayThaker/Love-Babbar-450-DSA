@@ -95,3 +95,115 @@ int main()
          << countTriplets(head, x);
     return 0;
 }
+
+//Approach 3 : Using Two pointer instead of Hashing
+//Time complexity will be still O(N^2) but the space complexity will be O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+ 
+// structure of node of doubly linked list
+struct Node {
+    int data;
+    struct Node* next, *prev;
+};
+ 
+// function to count pairs whose sum equal to given 'value'
+int countPairs(struct Node* first, struct Node* second, int value)
+{
+    int count=0;
+
+     // The loop terminates when either of two pointers
+    // become NULL, or they cross each other (second->next
+    // == first), or they become same (first == second)
+    while(first!=NULL aand second!=NULL and first!=second and second->next!=first)
+    {
+        //pair found
+        if((first->data+second->data)==value)
+        {
+            count++;
+            first=first->next;
+            second=second->prev;
+        }
+        // if sum is greater than 'value'
+        // move second in backward direction
+        else if ((first->data + second->data) > value)
+        {
+            second = second->prev;
+        }
+        // else move first in forward direction
+        else
+        {
+            first = first->next;
+        }
+           
+    }
+    return count;
+}
+
+int countTriplets(strict Node* head,int x)
+{
+    
+    // if list is empty
+    if (head == NULL)
+        return 0;
+ 
+    struct Node* current, *first, *last;
+    int count = 0;
+    
+    //get pointer to the last node of the DLL
+    last=head;
+    while(last->next!=NULL)
+    {
+        last=last->next;
+    }
+
+    for(current=head;current!=NULL;current=current->next)
+    {
+        first=current->next;
+
+        count+=countPairs(first,last,x-current->data);
+    }
+    return count;
+}
+
+
+void insert(struct Node** head, int data)
+{
+    // allocate node
+    struct Node* temp = new Node();
+ 
+    // put in the data
+    temp->data = data;
+    temp->next = temp->prev = NULL;
+ 
+    if ((*head) == NULL)
+        (*head) = temp;
+    else {
+        temp->next = *head;
+        (*head)->prev = temp;
+        (*head) = temp;
+    }
+}
+ 
+// Driver program to test above
+int main()
+{
+    // start with an empty doubly linked list
+    struct Node* head = NULL;
+ 
+    // insert values in sorted order
+    insert(&head, 9);
+    insert(&head, 8);
+    insert(&head, 6);
+    insert(&head, 5);
+    insert(&head, 4);
+    insert(&head, 2);
+    insert(&head, 1);
+ 
+    int x = 17;
+ 
+    cout << "Count = "
+         << countTriplets(head, x);
+    return 0;

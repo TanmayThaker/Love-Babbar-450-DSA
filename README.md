@@ -1,5 +1,5 @@
 # About 450-DSA
-*It contains a collection of 450 questions of Data Structures and Algorithms in C++.*
+*It contains a collection of 450 questions and solutions of Data Structures and Algorithms in C++.*
 
 ## Credits
 

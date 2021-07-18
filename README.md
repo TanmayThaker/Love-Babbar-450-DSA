@@ -8,4 +8,4 @@
 
 ## Ideal Approach to solve the problems :
 
-![Approach](GitHub450Image.png)
+![Approach](GitHub450Image.PNG)

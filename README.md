@@ -8,8 +8,4 @@
 
 ## Ideal Approach to solve the problems :
 
-```mermaid
-graph LR
-A[Pick a question] --> F[Think of brute force approach] --> B[Try to code it]  --> D[Analyze what things could be optimized] --> X[Try to optimize the solution and code it] -->R[Repeat]-->A
-
-```
+![Approach](GitHub450Image.png)

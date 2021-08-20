@@ -1,6 +1,8 @@
 //Largest Area Under Histogram
 //Link : https://leetcode.com/problems/largest-rectangle-in-histogram/submissions/
 //Video Link : https://www.youtube.com/watch?v=vcv3REtIvEo
+#include<bits/stdc++.h>
+using namespace std;
 class Solution {
 public:
     int largestRectangleArea(vector<int>& heights) {
